@@ -13,7 +13,27 @@ public class Bootcamp {
     private final LocalDate dataFinal = dataInicial.plusDays(45);
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
+  
+    {
+    Curso curso1 = new Curso();
+    curso1.setTitulo("curso java");
+    curso1.setDescricao("descrição curso java");
+    curso1.setCargaHoraria(8);
 
+    Curso curso2 = new Curso();
+    curso2.setTitulo("curso js");
+    curso2.setDescricao("descrição curso js");
+    curso2.setCargaHoraria(4);
+
+    Mentoria mentoria = new Mentoria();
+    mentoria.setTitulo("mentoria de java");
+    mentoria.setDescricao("descrição mentoria java");
+    mentoria.setData(LocalDate.now());
+
+    getConteudos().add(curso1);
+    getConteudos().add(curso2);
+    getConteudos().add(mentoria);
+    }
 
     public String getNome() {
         return nome;
@@ -60,7 +80,7 @@ public class Bootcamp {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bootcamp bootcamp = (Bootcamp) o;
-        return Objects.equals(nome, bootcamp.nome) && Objects.equals(descricao, bootcamp.descricao) && Objects.equals(dataInicial, bootcamp.dataInicial) && Objects.equals(dataFinal, bootcamp.dataFinal) && Objects.equals(devsInscritos, bootcamp.devsInscritos) && Objects.equals(conteudos, bootcamp.conteudos);
+        return Objects.equals(nome, nome) && Objects.equals(descricao, descricao) && Objects.equals(dataInicial, dataInicial) && Objects.equals(dataFinal, dataFinal) && Objects.equals(devsInscritos, devsInscritos) && Objects.equals(conteudos, conteudos);
     }
 
     @Override
